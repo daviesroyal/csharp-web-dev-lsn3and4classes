@@ -31,13 +31,32 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            NumberOfCredits += courseCredits;
+            Gpa += grade;
+
         }
 
         //TODO: Complete the GetGradeLevel method here:
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
-            return "grade level tbd";
+            if (NumberOfCredits > 0 && NumberOfCredits < 29)
+            {
+                return "Grade level: Freshman";
+            } else if (NumberOfCredits > 30 && NumberOfCredits < 59)
+            {
+                return "Grade level: Sophomore";
+            } else if (NumberOfCredits > 60 && NumberOfCredits < 89)
+            {
+                return "Grade level: Junior";
+            } else if (NumberOfCredits > 90)
+            {
+                return "Grade level: Senior";
+            } else
+            {
+                return "grade level tbd";
+            }
+
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
